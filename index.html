@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> KhodaNour </title>
+  <link rel="icon" href="./Statics/favicon.png">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Import map for Three.js (latest r182 as of Jan 2026) -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.182.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.182.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- Centered container for the 3D viewer -->
+  <div id="viewer-container">
+    <!-- Memorial Time Counter Overlay -->
+    <!-- Memorial Scrolling Subtitle at Bottom -->
+<div id="memorial-subtitle">
+  <div class="ticker">
+    <span id="ticker-text"></span>
+    <span id="ticker-text-dupe"></span> <!-- Duplicate for seamless loop -->
+  </div>
+</div>
+    <!-- Three.js canvas will be appended here by script -->
+     
+  </div>
+
+  <!-- Example: Space for other content (text, buttons, etc.) -->
+  <div class="content">
+    <div class="music">
+    <iframe id="sc-player" width="100%" height="166" scrolling="no" 
+    frameborder="no" allow="autoplay" 
+    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1402186198&color=%238B0000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
+</iframe>
+
+
+<div style="font-size: 11px; color: #21323e; line-break: anywhere; word-break: normal; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-family: Comfortaa,Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif; font-weight: Bold;">
+    <a href="https://soundcloud.com/siavash-danandeh-fard" 
+       title="Siavash Hakim" target="_blank" style="color: #000000; text-decoration: none;">Siavash Hakim</a> · 
+    <a href="https://soundcloud.com/siavash-danandeh-fard/khodanour" 
+       title="A Dance for KhodaNour" target="_blank" style="color: #490707; text-decoration: none;">A Dance for KhodaNour</a>
+</div>
+
+<script src="https://w.soundcloud.com/player/api.js"></script>
+<script>
+  const iframe = document.getElementById('sc-player');
+  const widget = SC.Widget(iframe);
+
+  // Loop the track
+  widget.bind(SC.Widget.Events.FINISH, function() {
+      widget.seekTo(0);  // rewind to start
+      widget.play();      // play again
+  });
+</script>
+    <div class="wiki-links-card">
+  <div class="card-title">Sources & Information</div>
+  <div class="links-list">
+    <a href="https://en.wikipedia.org/wiki/Killing_of_Khodanur_Lojei" target="_blank" class="wiki-link">
+      English Wikipedia Article
+    </a>
+    <a href="https://fa.wikipedia.org/wiki/%D8%AE%D8%AF%D8%A7%D9%86%D9%88%D8%B1_%D9%84%D8%AC%D9%87%E2%80%8C%D8%A7%DB%8C" target="_blank" class="wiki-link" id="faMatn">
+       مقاله ویکی‌پدیای فارسی
+    </a>
+  </div>
+  <div class="card-note">Dedicated to the memory of Khodanur Lojei</div>
+</div>
+  </div>
+
+  
+
+  <!-- Load modular scripts -->
+  <script src="Viewr.js" type="module"></script>
+  <script src="script.js" type="module"></script>
+  <script src="timer.js" type="module"></script>
+</body>
+</html>

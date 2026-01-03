@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Comfortaa:wght@300..700&display=swap');
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Comfortaa", sans-serif;
+  margin: 0;
+  background: #EEAECA;
+  background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%,
+   rgba(255, 0, 0, 1) 62%, rgba(148, 187, 233, 1) 100%);
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 10px;
+}
+
+/* The 3D viewer box */
+#viewer-container {
+  width: 100%;
+  max-width: 800px;           /* Limits size on large screens */
+  aspect-ratio: 16 / 9;       /* Nice proportion (change if needed) */
+  background-color: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  margin-bottom: 30px;
+}
+
+/* Make canvas fill the container */
+#viewer-container canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Other content area */
+.content {
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+/* Mobile optimizations */
+@media (max-width: 600px) {
+  #viewer-container {
+    aspect-ratio: 1 / 1;     /* Square on phones for better touch */
+    margin-bottom: 10px;
+  }
+  
+  body {
+    padding: 10px;
+  }
+}
+#memorial-subtitle {
+  font-family: "Comfortaa", sans-serif;
+  width: 100%;
+  max-width: 800px;          /* Matches your viewer-container max-width */
+  margin: 40px auto 0;       /* Centers it and adds space below canvas */
+  overflow: hidden;
+  pointer-events: none;
+  height: 70px;
+  padding: 0 20px;
+}
+
+.ticker {
+  font-family: "Comfortaa", sans-serif;
+  display: flex;
+  width: fit-content; /* Important: changes from 200% */
+  animation: scroll-left 60s linear infinite; /* Keep your desired speed, e.g. 60s */
+  white-space: nowrap;
+  color: rgba(220, 220, 255, 0.95);
+  font-size: 17px;
+  text-shadow: 0 3px 15px rgba(0,0,0,0.9);
+  letter-spacing: 2px;
+  padding-right: 100px; /* Large gap between end and repeat */
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Seamless loop + hover pause */
+.ticker:hover {
+  animation-play-state: paused;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  #memorial-subtitle {
+    margin: 20px auto 0;
+    height: 60px;
+    padding: 0 10px;
+  }
+  .ticker {
+    font-size: 17px;
+    animation-duration: 100s; 
+  }
+}
+.music{
+    margin-top: -20px;
+}
+.wiki-links-card {
+  max-width: 800px;
+  width: 100%;
+  background-color: rgba(20, 20, 40, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 30px auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Comfortaa", sans-serif;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  opacity: 0.95;
+}
+
+.links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.wiki-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.wiki-link:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.flag {
+  font-size: 1.5rem;
+}
+
+.card-note {
+  font-size: 0.95rem;
+  opacity: 0.7;
+  font-style: italic;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .wiki-links-card {
+    margin: 20px auto;
+    padding: 15px;
+  }
+  .wiki-link {
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
+#faMatn{
+  font-family: "Baloo Bhaijaan 2", sans-serif;
+}
